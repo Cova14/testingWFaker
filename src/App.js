@@ -1,10 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import WelcomeBanner from './components/WelcomeBanner';
+import CompaniesList from './components/CompaniesList';
 
 function App() {
+
+  const user = {
+    firstName: 'Arturo',
+    lastName: 'Covarrubias',
+    companies: [
+      {
+        name: 'Devsavant',
+        createdAt: '',
+        updatedAt: '',
+      },
+      {
+        name: 'Intelepeer',
+        createdAt: '',
+        updatedAt: '',
+      },
+    ],
+    createdAt: '',
+    updatedAt: ''
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
+      <WelcomeBanner user={user} />
+      <CompaniesList companies={user.companies} />
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +41,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
